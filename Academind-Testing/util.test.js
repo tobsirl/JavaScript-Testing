@@ -26,5 +26,17 @@ test('should click around', async () => {
     args: ['--window-size=1920,1080']
   });
   const page = await browser.newPage();
-  page.goto('http://127.0.0.1:5500/index.html');
+  await page.goto(
+    'file:/C:/Users/Paul/Desktop/JavaScript/JavaScript-Testing/Academind-Testing/index.html'
+  );
+
+  await page.click('input#name');
+  await page.type('input#name', 'Anna');
+
+  await page.click('input#age');
+  await page.type('input#age', '28');
+
+  await page.click('#btnAddUser');
+  const finalText = await page.$eval('.user-item', el => el.textContent);
+  expect(finalText).toBe('Anna (28 years old)');
 });
