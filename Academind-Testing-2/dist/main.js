@@ -104,7 +104,7 @@ eval("\r\nconst { printTitle } = __webpack_require__(/*! ./util */ \"./util.js\"
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\r\n\r\nconst fetchData = () => {\r\n  return axios\r\n    .get('https://jsonplaceholder.typicode.com/todos/1')\r\n    .then(response => {\r\n      return response.data;\r\n    });\r\n};\r\n\r\nexports.fetchData = fetchData;\r\n\n\n//# sourceURL=webpack:///./http.js?");
+eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\r\n\r\nconst fetchData = () => {\r\n  console.log('Fetching data...');\r\n  return axios\r\n    .get('https://jsonplaceholder.typicode.com/todos/1')\r\n    .then(response => {\r\n      return response.data;\r\n    });\r\n};\r\n\r\nexports.fetchData = fetchData;\r\n\n\n//# sourceURL=webpack:///./http.js?");
 
 /***/ }),
 
