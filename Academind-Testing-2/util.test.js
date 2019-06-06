@@ -1,6 +1,6 @@
-jest.mock('./http');
+// jest.mock('./http');
 
-const { printTitle, loadTitle } = require('./util');
+const { loadTitle } = require('./util');
 
 test('should print an uppercase text', () => {
   loadTitle().then(title => {
