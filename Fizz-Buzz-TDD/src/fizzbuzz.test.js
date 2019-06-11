@@ -1,3 +1,5 @@
+import { FizzBuzz } from './fizzbuzz';
+
 describe('FizzBuzz', () => {
   it(`should return "FizzBuzz" when the number is evenly 
   divisible by 15, "Fizz" when its evenly divisible by 3 and
