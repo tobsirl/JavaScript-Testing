@@ -53,3 +53,22 @@
 //     console.log(i, output);
 //   }
 // }
+
+export function isMultiple(num, mod) {
+  return num % mod === 0;
+}
+
+export function FizzBuzz(num) {
+  switch (true) {
+    case isMultiple(num, 15):
+      return 'FizzBuzz';
+    case isMultiple(num, 3):
+      return 'Fizz';
+    case isMultiple(num, 5):
+      return 'Buzz';
+    default:
+      return num;
+  }
+}
+
+//const main = [...Array(100)].map((_, i) => FizzBuzz(i + 1));
