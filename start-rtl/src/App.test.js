@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from './custom-render';
 import App from './App';
 
 // !Different style of testing
