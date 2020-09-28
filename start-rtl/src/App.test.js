@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from './custom-render';
+import { render, screen } from './custom-render';
 import App from './App';
 
 // !Different style of testing
@@ -12,9 +12,9 @@ import App from './App';
 // !use describe, it pattern
 describe('<App />', () => {
   it('Renders <App /> component correctly', () => {
-    const { getByText } = render(<App />);
+    render(<App />);
     expect(
-      getByText(/Getting started with React testing library/i)
+      screen.getByText(/Getting started with React testing library/i)
     ).toBeInTheDocument();
   });
 });
