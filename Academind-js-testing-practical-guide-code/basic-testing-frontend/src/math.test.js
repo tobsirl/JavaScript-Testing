@@ -15,3 +15,11 @@ it('should summarize all number values in an array', () => {
   );
   expect(result).toBe(expectedResult);
 });
+
+it('should yield NaN if at least one invalid number is provided', () => {
+  const inputs = ['invalid', 1];
+
+  const result = add(inputs);
+
+  expect(result).toBeNaN();
+});
