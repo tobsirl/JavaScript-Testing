@@ -23,3 +23,15 @@ it('should yield NaN if at least one invalid number is provided', () => {
 
   expect(result).toBeNaN();
 });
+
+it('should yield a correct sum if an array of numeric string values is provided ', () => {
+  const numbers = ['1', '2'];
+
+  const result = add(numbers);
+  const expectedResult = numbers.reduce(
+    (prevValue, currentValue) => +prevValue + +currentValue,
+    0
+  );
+
+  expect(result).toBe(expectedResult);
+});
