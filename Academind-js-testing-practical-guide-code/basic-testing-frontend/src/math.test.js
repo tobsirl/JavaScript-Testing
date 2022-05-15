@@ -46,3 +46,11 @@ it('should yield 0 if an empty array is provided', () => {
   // assert
   expect(result).toBe(0);
 });
+
+it('should throw an error if no value is passed into the function', () => {
+  const resultFn = () => {
+    add();
+  };
+
+  expect(resultFn).toThrow();
+});
