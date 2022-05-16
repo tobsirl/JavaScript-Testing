@@ -9,6 +9,14 @@ it('should transform a string number to type number', () => {
   expect(result).toBeTypeOf('number');
 });
 
+it('should transform a string number to type number', () => {
+  const input = '1';
+
+  const result = transformToNumber(input);
+
+  expect(result).toBe(+input);
+});
+
 it('should yield NaN for non-transformable values', () => {
   const input = 'invalid';
 
