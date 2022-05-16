@@ -19,8 +19,11 @@ it('should transform a string number to type number', () => {
 
 it('should yield NaN for non-transformable values', () => {
   const input = 'invalid';
+  const input2 = {};
 
   const result = transformToNumber(input);
+  const result2 = transformToNumber(input2);
 
   expect(result).toBeNaN();
+  expect(result2).toBeNaN();
 });
