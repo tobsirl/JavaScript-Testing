@@ -10,14 +10,6 @@ function formSubmitHandler(event) {
 
   let result = calculateResult(numberValues);
 
-  let resultText = '';
-
-  if (result === 'invalid') {
-    resultText = 'Invalid input. You must enter valid numbers.';
-  } else if (result !== 'no-calc') {
-    resultText = 'Result: ' + result;
-  }
-
   output.textContent = resultText;
 }
 
