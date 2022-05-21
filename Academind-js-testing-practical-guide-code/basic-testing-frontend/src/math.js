@@ -1,3 +1,5 @@
+import { cleanNumbers } from './util/numbers';
+
 export function add(numbers) {
   let sum = 0;
 
@@ -8,14 +10,10 @@ export function add(numbers) {
 }
 
 export function calculateResult(numberValues) {
+  let result = '';
   try {
-    const numbers = [];
-    for (const numberInput of numberInputs) {
-      validateStringNotEmpty(numberInput);
-      const number = transformToNumber(numberInput);
-      validateNumber(number);
-      numbers.push(number);
-    }
+    const numbers = cleanNumbers(numberValues);
+
     result = add(numbers).toString();
   } catch (error) {
     result = error.message;
