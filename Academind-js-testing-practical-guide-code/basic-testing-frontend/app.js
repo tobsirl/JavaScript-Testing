@@ -1,4 +1,4 @@
-import { extractNumbers } from './src/parser.js';
+import { extractEnteredNumberValues } from './src/parser.js';
 import {
   validateStringNotEmpty,
   validateNumber,
@@ -11,11 +11,10 @@ const output = document.getElementById('result');
 
 function formSubmitHandler(event) {
   event.preventDefault();
-  const formData = new FormData(form);
-  const numberInputs = extractNumbers(formData);
+  const numberValues = extractEnteredNumberValues();
 
   let result = '';
-  
+
   try {
     const numbers = [];
     for (const numberInput of numberInputs) {
