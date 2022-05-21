@@ -18,4 +18,5 @@ export function calculateResult(numberValues) {
   } catch (error) {
     result = error.message;
   }
+  return result;
 }
