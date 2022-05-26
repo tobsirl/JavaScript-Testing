@@ -20,4 +20,5 @@ it('should execute the writeFile method', () => {
 
   // return expect(writeData(testData, testFileName)).resolves.toBeUndefined();
   expect(fs.writeFile).toBeCalled();
+  expect(fs.writeFile).toBeCalledWith(testFileName, testData);
 });
