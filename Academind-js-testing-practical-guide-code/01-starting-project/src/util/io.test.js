@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import writeData from './io';
 
 vi.mock('fs');
+vi.mock('path');
 it('should execute the writeFile method', () => {
   const testData = 'Test';
   const testFileName = 'text.txt';
