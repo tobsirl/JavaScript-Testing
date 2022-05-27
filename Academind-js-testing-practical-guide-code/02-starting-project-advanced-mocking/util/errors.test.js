@@ -1,15 +1,20 @@
 import { describe, it, expect } from 'vitest';
 import { HttpError } from './errors';
 
-describe('HttpError', () => {
-  it('should create a HttpError class', () => {
-    const statusCode = 200;
-    const message = 'Status: Success';
-    const data = {};
+describe('class HttpError', () => {
+  it('should contain the provided status code, message and data', () => {
+    const testStatusCode = 200;
+    const testMessage = 'Status: Success';
+    const testData = { key: 'test' };
 
-    const httpError = new HttpError(statusCode, message, data);
+    const testHttpError = new HttpError(testStatusCode, testMessage, testData);
 
-    console.log(httpError);
-    expect(httpError).toBe();
+    expect(testHttpError.statusCode).toBe(testStatusCode);
+    expect(testHttpError.message).toBe(testMessage);
+    expect(testHttpError.data).toBe(testData);
   });
+});
+
+describe('class ValidationError', () => {
+  it('should ', () => {});
 });
