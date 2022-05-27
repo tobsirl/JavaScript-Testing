@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { HttpError } from './errors';
+import { HttpError, ValidationError } from './errors';
 
 describe('class HttpError', () => {
   it('should contain the provided status code, message and data', () => {
@@ -25,5 +25,11 @@ describe('class HttpError', () => {
 });
 
 describe('class ValidationError', () => {
-  it('should ', () => {});
+  it('should contain the provided message', () => {
+    const testMessage = 'Top of the morning to ya!';
+
+    const testValidationError = new ValidationError(testMessage);
+
+    expect(testValidationError.message).toBe(testMessage);
+  });
 });
