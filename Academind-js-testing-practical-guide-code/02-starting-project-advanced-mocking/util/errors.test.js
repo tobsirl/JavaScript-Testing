@@ -13,6 +13,15 @@ describe('class HttpError', () => {
     expect(testHttpError.message).toBe(testMessage);
     expect(testHttpError.data).toBe(testData);
   });
+
+  it('should contain undefined as data if no data is provided', () => {
+    const testStatusCode = 200;
+    const testMessage = 'Status: Success';
+
+    const testHttpError = new HttpError(testStatusCode, testMessage);
+
+    expect(testHttpError.data).toBeUndefined();
+  });
 });
 
 describe('class ValidationError', () => {
