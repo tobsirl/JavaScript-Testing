@@ -13,11 +13,13 @@ const testFetch = vi.fn((url, options) => {
         });
       },
     };
-    resolve();
+    resolve(testResponse);
   });
 });
 
 vi.stubGlobal('fetch', testFetch);
 it('should return any available response data', () => {
-  sendDataRequest();
+  const testData = { key: 'test' };
+
+  return expect(sendDataRequest(testData)).resolves.toEqual(testResponseData);
 });
