@@ -1,4 +1,5 @@
 import { it, expect, vi } from 'vitest';
+import { HttpError } from './errors';
 import { sendDataRequest } from './http';
 
 const testResponseData = { testKey: 'testData' };
@@ -31,7 +32,7 @@ it('should convert the provided data to JSON before sending the request', async 
   const testData = { key: 'test' };
 
   let errorMessage;
-  
+
   try {
     await sendDataRequest(testData);
   } catch (error) {
@@ -39,4 +40,10 @@ it('should convert the provided data to JSON before sending the request', async 
   }
 
   expect(errorMessage).not.toBe('Not a string.');
+});
+
+it('should throw an HttpError in case of non-ok responses', () => {
+  const testData = { key: 'test' };
+
+  return expect(sendDataRequest(testData)).rejects.toBeInstanceOf(HttpError);
 });
