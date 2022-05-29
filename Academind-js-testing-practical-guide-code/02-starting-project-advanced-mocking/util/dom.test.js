@@ -23,3 +23,10 @@ it('should add an error paragraph to the id="errors" element', () => {
 
   expect(errorParagraph).not.toBeNull();
 });
+
+it('should not contain an error paragraph initially', () => {
+  const errorsEl = document.getElementById('errors');
+  const errorParagraph = errorsEl.firstElementChild;
+
+  expect(errorParagraph).toBeNull();
+});
